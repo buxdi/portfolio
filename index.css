@@ -290,3 +290,14 @@ h2 {
     transform: translateY(0);
     box-shadow: 0 5px 10px -5px rgba(45, 48, 71, 0.15);
 }
+
+.practice-text {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    color: var(--background-color);
+    font-size: 1rem;
+    opacity: 0.8;
+    z-index: 1001;
+}
