@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <title>Buxdi</title>
+    </head>
+
+    <body>
+        <!-- Loading Screen -->
+        <div class="loadPage">
+            <div id="loadTitles">
+                <h1>BUXDI</h1>
+                <h2>Practice of web developement 2022</h2>
+            </div>
+            
+            <div class="loadContents">
+                <p id="loadText">Welcome</p>
+                <img id="loadImage1" 
+                     alt="Personal avatar bust" 
+                     src="https://blush.design/api/download?shareUri=E6E5Da_UaBiUBWLm&c=Skin_0%7Eae5d29&w=800&h=800&fm=png">
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <ul class="navbar">
+            <li><a href="#" onclick="thomasTextChanger(this)" id="thomasBtn">Buxdi</a></li>
+            <li><a href="#" onclick="parisTextChanger(this)" id="parisBtn">Based in Paris<br>France</a></li>
+            <li><a href="#" onclick="learnTextChanger(this)" id="learnBtn">Currently Learning<br>Web Developement</a></li>
+            <button class="buttons" id="contactBtn" role="button"><span>Contact</span></button>
+            <button class="buttons" id="aboutBtn" role="button"><span>About</span></button>
+        </ul>
+
+        <!-- Main Content -->
+        <div class="homeContents">
+            <p id="homeText">WEB DEVELOPER<br>APPRENTICE</p>
+            <img id="homeImage1" 
+                 alt="Personal avatar standing" 
+                 src="https://blush.design/api/download?shareUri=9EOOH2xokBOCL4bq&c=Skin_0%7Eae5d29&w=800&h=800&fm=png">
+            <p id="homeSubtitle">There is only one way to learn and that is by doing.</p>
+        </div>
+
+        <script>
+            // DOM Elements
+            const title = document.getElementById("homeText");
+            const thomas = document.getElementById("thomasBtn");
+            const contact = document.getElementById("contactBtn");
+            const about = document.getElementById("aboutBtn");
+            const paris = document.getElementById("parisBtn");
+            const learn = document.getElementById("learnBtn");
+
+            // Event Listeners
+            thomas.addEventListener("click", titleAnimationChanger);
+            about.addEventListener("click", titleAnimationChanger);
+            contact.addEventListener("click", titleAnimationChanger);
+            paris.addEventListener("click", titleAnimationChanger);
+            learn.addEventListener("click", titleAnimationChanger);
+            
+            about.addEventListener("click", aboutTextChanger);
+            contact.addEventListener("click", contactTextChanger);
+            
+            // Content Change Functions
+            function learnTextChanger() {
+                setTimeout(function() {
+                    title.innerHTML = "<h3 style='white-space: nowrap;'>This website was created with:</h3><ul><li>HTML</li><li>CSS</li><li>JAVASCRIPT</li></ul>";
+                    title.style.fontSize = "30px";
+                    title.style.width = "33%";
+                }, 230);
+            }
+
+            function parisTextChanger() {
+                setTimeout(function() {
+                    title.innerHTML = '<img src="https://img.20mn.fr/JlaPuPqDQuOoq51YqX7BLQ/2048x1536-fit_illustration-paris-vue-d-en-haut-depuis-le-quartier-st-cyprien-centre-ville-de-paris.jpg" width="600px" height="350px">';
+                    title.style.width = "58%";
+                }, 230);
+            }
+
+            function thomasTextChanger() {
+                setTimeout(function() {
+                    title.innerHTML = "DEVELOPER<br>APPRENTICE";
+                    title.style.fontSize = "80px";
+                    title.style.width = "58%";
+                }, 230);
+            }
+
+            function contactTextChanger() {
+                setTimeout(function() {
+                    title.innerHTML = "buxdi.website<br>@gmail.com";
+                    title.style.fontSize = "80px";
+                    title.style.width = "58%";
+                }, 230);
+            }
+
+            function aboutTextChanger() {
+                setTimeout(function() {
+                    title.innerHTML = "Buxdi is fueled by his passion for computers.<br>He considers himself a 'forever student' and<br>is strongly motivated to become a professional developer.";
+                    title.style.fontSize = "40px";
+                }, 230);
+            }
+
+            // Animation Function
+            function titleAnimationChanger(text) {
+                let pos = 1;
+                let run = 0;
+                const id = setInterval(frame, 1);
+                
+                function frame() {
+                    if (run == 250) {
+                        clearInterval(id);
+                    } else {
+                        if (run < 120) {
+                            title.style.left = pos + '%';
+                            pos++;
+                        } else {
+                            title.style.left = pos + '%';
+                            pos--;
+                        }
+                        run++;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
